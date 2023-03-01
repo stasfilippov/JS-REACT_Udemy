@@ -21,24 +21,25 @@
 
 Проверить, чтобы все работало без ошибок в консоли */
 
+
+//МОЕ РЕШЕНИЕ
 'use strict';
 //==1
 /* const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?');
 console.log(numberOfFilms); */
 
 //==2
-const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?');
-const personalMovieDB = {
+/*const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
     actors: {},
     genres: [],
     privat: false
-}
+} */
 // console.log(personalMovieDB)
 
 //==3
-const firstFilmName = prompt('Один из последних просмотренных фильмов?'),
+/* const firstFilmName = prompt('Один из последних просмотренных фильмов?'),
     firstFilmMark = prompt('На сколько оцените его?'),
     secondFilmName = prompt('Один из последних просмотренных фильмов?'),
     secondFilmMark = prompt('На сколько оцените его?');
@@ -46,4 +47,9 @@ const firstFilmName = prompt('Один из последних просмотр�
 personalMovieDB.movies[firstFilmName] = firstFilmMark;
 personalMovieDB.movies[secondFilmName] = secondFilmMark;
 
-console.log(personalMovieDB);
+console.log(personalMovieDB); */
+
+//ИСПРАВЛЕННОЕ
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', ''); // можно добавить унарный +, чтобы получить число
+
+//в третьей задаче можно было использовать буквенные переменные в отличие от смысловых, тк они используются один раз
