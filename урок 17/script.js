@@ -23,30 +23,27 @@
 
 'use strict';
 //==1
-/* let numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?');
+/* const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?');
 console.log(numberOfFilms); */
 
 //==2
-/* let numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?');
-let personalMovieDB = {
+const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?');
+const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
     actors: {},
     genres: [],
     privat: false
 }
-console.log(personalMovieDB) */
+// console.log(personalMovieDB)
 
 //==3
-let firstFilmName = prompt('Один из последних просмотренных фильмов?'),
+const firstFilmName = prompt('Один из последних просмотренных фильмов?'),
     firstFilmMark = prompt('На сколько оцените его?'),
     secondFilmName = prompt('Один из последних просмотренных фильмов?'),
-    secondFilMark = prompt('На сколько оцените его?');
+    secondFilmMark = prompt('На сколько оцените его?');
 
+personalMovieDB.movies[firstFilmName] = firstFilmMark;
+personalMovieDB.movies[secondFilmName] = secondFilmMark;
 
-const movies = {
-    firstFilmName: firstFilmMark,
-    secondFilmName: secondFilMark
-};
-
-console.log(movies);
+console.log(personalMovieDB);
