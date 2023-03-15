@@ -25,7 +25,7 @@ function start () {
     
 }
 
-start();
+// start();
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -54,7 +54,7 @@ function rememberMyFilms () {
     }
 }
 
-rememberMyFilms ();
+// rememberMyFilms ();
 
 function detectPersonalLevel () {
     if (personalMovieDB.count < 10) {
@@ -68,7 +68,16 @@ function detectPersonalLevel () {
     }
 }
 
-detectPersonalLevel ();
+// detectPersonalLevel ();
+
+function writeYourGenres () {
+    for (let i = 0; i <= 2; i++) {
+        const favoriteGenres = prompt (`Ваш любимый жанр под номером ${i + 1}`)
+        personalMovieDB.genres[i] = favoriteGenres;
+    }
+}
+
+writeYourGenres ();
 
 function showMyDB (arr) {
     if (arr) {
@@ -77,15 +86,14 @@ function showMyDB (arr) {
     console.log (personalMovieDB);
 }
 
+// вариант ответа с урока
+/* function showMyDB (hidden) {
+    if (!hidden) {
+        console.log (personalMovieDB);
+    }
+} */
+
 showMyDB (personalMovieDB.privat);
 
-function writeYourGenres () {
-    for (let i = 1; i <= 3; i++) {
-        const favoriteGenres = prompt (`Ваш любимый жанр под номером ${i}`)
-        personalMovieDB.genres.push = favoriteGenres;
-    }
-}
-
-writeYourGenres ();
 
 // Код возьмите из предыдущего домашнего задания
