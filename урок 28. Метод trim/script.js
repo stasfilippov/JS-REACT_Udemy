@@ -13,7 +13,7 @@ function start () {
     
 }
 
-// start();
+start();
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -24,20 +24,16 @@ const personalMovieDB = {
 }
 
 function rememberMyFilms () {
-    let i = 0;
-    
-    first: while (i >= 0 && i < 2) {
-        console.log(i);
-        const a = prompt('Один из последних просмотренных фильмов?', ' ');
+    for (let i = 0; i < 2; i++) {
+        const a = prompt('Один из последних просмотренных фильмов?', ' ').trim();
         const b = prompt('На сколько оцените его?', ' ');
-        
-        if (a != null && b != null && a != '' && b != '' && a != a.length > 50) {
+
+        if (a != null && b != null && a != '' && b != '' && a != a.length < 50) {
             personalMovieDB.movies[a] = b;
             console.log('Done');
-            i++;
         } else {
             console.log('Error');
-            continue first;
+            i--;
         }
     }
 }
