@@ -1,10 +1,13 @@
 'use strict';
 
-const str = 'string'
+const str = prompt('', '');
+const products = str.split(', ');
+products.sort(compareNum);
+console.log(products);
 
-console.log(str.split())
-
-
+function compareNum (a, b) {
+    return a - b;
+}
 
 const arr = [1, 2, 3, 4, 5, 6]
 
