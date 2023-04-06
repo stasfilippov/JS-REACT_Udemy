@@ -15,24 +15,22 @@
 'use strict';
 
 // Код возьмите из предыдущего домашнего задания
-let numberOfFilms;
 
-function start () {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?');
-    
-    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?');
-    }
-}
 
-start();
 
 const personalMovieDB = {
-    count: numberOfFilms,
+    count: 0,
     movies: {},
     actors: {},
     genres: [],
     privat: true,
+    start: function () {
+        personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?');
+        
+        while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+            personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?');
+        }
+    },
     rememberMyFilms: function () {
         for (let i = 0; i < 2; i++) {
             const a = prompt('Один из последних просмотренных фильмов?', ' ').trim();
@@ -67,27 +65,25 @@ const personalMovieDB = {
             personalMovieDB.genres[i] = favoriteGenres;
             i++
         }
-        personalMovieDB.genres.forEach(Element => {
-            console.log(`Любимый жанр №${personalMovieDB.genres.indexOf(Element) + 1} - это ${Element}`);
+        personalMovieDB.genres.forEach((item, i) => {
+            console.log(`Любимый жанр №${i + 1} - это ${item}`);
         })
     },
     toggleVisibleMyDB: function () {
         if (personalMovieDB.privat) {
-            return personalMovieDB.privat = false;
+            personalMovieDB.privat = false;
         } else {
-            return personalMovieDB.privat = true;
+            personalMovieDB.privat = true;
         }
     },
-    showMyDB: function (arr) {
-        if (arr) {
-            return;
+    showMyDB: function (hidden) {
+        if (!hidden) {
+            console.log (personalMovieDB);
         }
-        console.log (personalMovieDB);
     }
 }
 
-
-console.log(personalMovieDB.count)
+personalMovieDB.start();
 
 personalMovieDB.rememberMyFilms();
 
