@@ -28,7 +28,9 @@ const movieDB = {
 const adv = document.querySelectorAll('.promo__adv img');
 const promoGenre = document.querySelector('.promo__genre');
 const bg = document.querySelector('.promo__bg');
-const interList = document.querySelectorAll('.promo__interactive-item');
+const movieList = document.querySelector('.promo__interactive-list');
+
+console.log(movieList)
 
 
 //1------
@@ -38,20 +40,28 @@ adv.forEach(item => {
 
 
 //2------
-promoGenre.innerHTML = 'драма';
+promoGenre.textContent = 'драма';
 
 //3------
-bg.style.backgroundImage = `url(http://127.0.0.1:5500/JS-REACT_Udemy/%D1%83%D1%80%D0%BE%D0%BA%2041.%20%D0%9F%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0%20-%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%20%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BC%D0%B8%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0%D0%BC%D0%B8/img/bg.jpg)`
+bg.style.backgroundImage = `url(img/bg.jpg)`
 
 //4------
-const moviesSort = movieDB.movies.sort();
 
-moviesSort.forEach((item, i) => {
-    interList[i].innerHTML = item;
+movieList.innerHTML = '';
+
+movieDB.movies.sort();
+
+movieDB.movies.forEach((item, i) => {
+    movieList.innerHTML += `
+    <li class="promo__interactive-item">${i + 1}. ${item}
+        <div class="delete"></div>
+    </li>
+    `;
 })
+
 
 
 //5------
-interList.forEach((item, i) => {
-    item.innerHTML = `${i + 1}. ${item.innerHTML}`;
-})
+// interList.forEach((item, i) => {
+//     item.textContent = `${i + 1}. ${item.textContent}`;
+// })
