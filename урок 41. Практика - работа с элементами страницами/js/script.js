@@ -44,7 +44,14 @@ promoGenre.innerHTML = 'драма';
 bg.style.backgroundImage = `url(http://127.0.0.1:5500/JS-REACT_Udemy/%D1%83%D1%80%D0%BE%D0%BA%2041.%20%D0%9F%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0%20-%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D1%81%20%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BC%D0%B8%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0%D0%BC%D0%B8/img/bg.jpg)`
 
 //4------
-console.log(interList)
+const moviesSort = movieDB.movies.sort();
 
-console.log(movieDB.movies.sort())
+moviesSort.forEach((item, i) => {
+    interList[i].innerHTML = item;
+})
 
+
+//5------
+interList.forEach((item, i) => {
+    item.innerHTML = `${i + 1}. ${item.innerHTML}`;
+})
