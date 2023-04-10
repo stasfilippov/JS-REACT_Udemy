@@ -1,4 +1,4 @@
-const btn = document.querySelector('button');
+const btns = document.querySelectorAll('button');
 const overlay = document.querySelector('.overlay');
 
 // btn.onclick = function() { // --- не используется в практике, при создании нескольких обработчиков для одного элемента - возможно переназначение, не удаляется 
@@ -31,7 +31,7 @@ const delElement = (event) => {
 //     }
 }
 
-btn.addEventListener('click', delElement); //происходит высплытие событий - когда обработчик событий срабатывает на самом вложенном элементе и поднимаясь вверх по иерархии
+// btns.addEventListener('click', delElement); //происходит высплытие событий - когда обработчик событий срабатывает на самом вложенном элементе и поднимаясь вверх по иерархии
 overlay.addEventListener('click', delElement);
 
 
@@ -42,3 +42,8 @@ link.addEventListener('click', (event) => {
 
     console.log(event.target);
 }, {once: true})
+
+
+btns.forEach(btn => {
+    btn.addEventListener('click', delElement);
+});
