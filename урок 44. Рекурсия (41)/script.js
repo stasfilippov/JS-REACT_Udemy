@@ -1,23 +1,27 @@
 'use script';
 
-// console.log(document.head)
-// console.log(document.documentElement)
-// console.log(document.body.childNodes)
-// console.log(document.body.firstChild)
-// console.log(document.body.firstElementChild)
-
-// console.log(document.body.lastChild)
-
-// console.log(document.querySelector('#current').parentNode)
-
-// console.log(document.querySelector('[data-current="3"]').parentElement)
-
-for (let node of document.body.childNodes) {
-    if (node.nodeName == '#text') {
-        continue;
+function pow (x, n) {
+    let result = 1
+    
+    for (let i = 0; i < n; i++) {
+        result *= x
     }
-
-    console.log(node);
+    
+    return result;
 }
+
+function pow (x, n) {
+    if (n === 1) {
+        return x;
+    } else {
+        return x * pow (x, n - 1);
+    }
+}
+
+// console.log(pow (2, 1));
+// console.log(pow (2, 2)); // 4
+console.log(pow (2, 3)); //8
+console.log(pow (2, 4)); // 16
+
 
 
