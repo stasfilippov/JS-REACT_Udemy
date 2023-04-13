@@ -47,3 +47,4 @@ link.addEventListener('click', (event) => {
 btns.forEach(btn => {
     btn.addEventListener('click', delElement);
 });
+
