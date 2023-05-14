@@ -1,32 +1,46 @@
-const btns = document.querySelectorAll('button');
-const wrapper = document.querySelector('.btn-block');
+// const timerId = setTimeout(function () {
+//     console.log('Hello')
+// }, 2000);
 
-// console.log(btns[0].classList.length);
+// const timerId2 = setTimeout(function (text) {
+//     console.log(text)
+// }, 2000, 'World');
 
-// console.log(btns[0].classList.item(0));
+const btn = document.querySelector('.btn');
+let timerId,
+    i = 0;
 
-// console.log(btns[1].classList.add('red'));
+function myAnimation () {
+    const elem = document.querySelector('.box');
+    let pos = 0;
 
-// // console.log(btns[0].classList.remove('blue'));
+    const id = setInterval(frame, 10);
+    
+    function frame () {
+        if (pos == 300) {
+            clearInterval(id)
+        } else {
+            pos++;
+            elem.style.top = pos + 'px';
+            elem.style.left = pos + 'px';
+        }
+    }
+}
 
-// // console.log(btns[0].classList.toggle('blue'));
+btn.addEventListener('click', myAnimation);
 
-// if (btns[1].classList.contains.red) {
-//     console.log('red');
+
+// function logger () {
+//     if (i === 3) {
+//         clearInterval(timerId)
+//     }
+
+//     console.log('text');
+//     i++;
 // }
 
-btns[0].addEventListener('click', () => {
-    btns[1].classList.toggle('red')
-});
-
-wrapper.addEventListener('click', (event) => {
-    if (event.target && event.target.matches('button.red')) {
-        console.log ('hello')
-    }
-})
-
-const btn = document.createElement('button');
-btn.classList.add('red');
-wrapper.append(btn);
-
+// let id = setTimeout(function log() {
+//     console.log('Hello');
+//     id = setTimeout (log, 500);
+// }, 500);
 
